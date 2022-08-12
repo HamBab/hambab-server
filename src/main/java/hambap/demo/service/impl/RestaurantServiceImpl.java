@@ -20,9 +20,11 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public Optional<List<Restaurant>> findAll() {
-
-        Optional<List<Restaurant>> restaurantList = restaurantDAO.findAll();
+    public Optional<List<Restaurant>> findByCategory(String category) {
+        if (category.equals("중국식")) {
+            category = "중식";
+        }
+        Optional<List<Restaurant>> restaurantList = restaurantDAO.findByCategory(category);
         return restaurantList;
     }
 }

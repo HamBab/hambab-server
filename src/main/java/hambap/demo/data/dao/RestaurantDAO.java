@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface RestaurantDAO {
 
-    Optional<List<Restaurant>> findAll();
+    Optional<List<Restaurant>> findByCategory(String category);
 }

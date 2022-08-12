@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 public class Restaurant {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
