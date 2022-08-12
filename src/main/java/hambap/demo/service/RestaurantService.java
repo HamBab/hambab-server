@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface RestaurantService {
 
-    Optional<List<Restaurant>> findAll();
+    Optional<List<Restaurant>> findByCategory(String category);
 }
