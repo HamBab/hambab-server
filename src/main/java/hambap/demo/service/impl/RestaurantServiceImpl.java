@@ -27,4 +27,9 @@ public class RestaurantServiceImpl implements RestaurantService {
         Optional<List<Restaurant>> restaurantList = restaurantDAO.findByCategory(category);
         return restaurantList;
     }
+
+    public Optional<List<Restaurant>> search(String name) {
+        Optional<List<Restaurant>> searchList = restaurantDAO.search(name);
+        return searchList;
+    }
 }

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.management.openmbean.OpenDataException;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,5 +20,10 @@ public class RestaurantController {
     @GetMapping("/{category}")
     public Optional<List<Restaurant>> findByCategory(String category) {
         return restaurantService.findByCategory(category);
+    }
+
+    @GetMapping("/search/{name}")
+    public Optional<List<Restaurant>> search(String name) {
+        return restaurantService.search(name);
     }
 }
