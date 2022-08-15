@@ -31,4 +31,10 @@ public class RestaurantDAOImpl implements RestaurantDAO {
         Optional<List<Restaurant>> searchList = restaurantRepository.search(name);
         return searchList;
     }
+
+    @Override
+    public Optional<Restaurant> getRestaurantInfo(Long id) {
+        Optional<Restaurant> info = restaurantRepository.getRestaurantInfo(id);
+        return info;
+    }
 }
