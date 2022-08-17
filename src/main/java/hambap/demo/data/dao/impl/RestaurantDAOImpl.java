@@ -26,4 +26,15 @@ public class RestaurantDAOImpl implements RestaurantDAO {
         Optional<List<Restaurant>> restaurantList = restaurantRepository.findByCategory(category);
         return restaurantList;
     }
+
+    public Optional<List<Restaurant>> search(String name) {
+        Optional<List<Restaurant>> searchList = restaurantRepository.search(name);
+        return searchList;
+    }
+
+    @Override
+    public Optional<Restaurant> getRestaurantInfo(Long id) {
+        Optional<Restaurant> info = restaurantRepository.getRestaurantInfo(id);
+        return info;
+    }
 }
