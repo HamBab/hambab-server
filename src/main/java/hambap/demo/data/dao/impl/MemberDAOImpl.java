@@ -25,4 +25,12 @@ public class MemberDAOImpl implements MemberDAO {
 
         return member;
     }
+
+    @Override
+    public Optional<Member> findByUserId(String userId) {
+
+        Optional<Member> member = memberRepository.findByUserId(userId);
+
+        return member;
+    }
 }

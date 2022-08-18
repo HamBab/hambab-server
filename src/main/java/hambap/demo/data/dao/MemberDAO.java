@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface MemberDAO {
 
     Optional<Member> findMember(Long id);
+    Optional<Member> findByUserId(String userId);
 }
