@@ -3,6 +3,7 @@ package hambap.demo.controller;
 import hambap.demo.data.entity.Member;
 import hambap.demo.service.LoginService;
 import hambap.demo.service.MemberService;
+import hambap.demo.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,11 @@ public class MemberController {
 
     private final MemberService memberService;
     private final LoginService loginService;
+
+    @GetMapping("/signup/{userId}")
+    public String signUp(@PathVariable String userId) {
+        return memberService.signUp(userId);
+    }
 
     @GetMapping("/{id}")
     public Optional<Member> findMemberById(@PathVariable Long id) {
