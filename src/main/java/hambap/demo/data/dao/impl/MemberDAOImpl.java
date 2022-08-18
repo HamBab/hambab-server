@@ -18,6 +18,21 @@ public class MemberDAOImpl implements MemberDAO {
         this.memberRepository = memberRepository;
     }
 
+
+    @Override
+    public Optional<Member> save(Member member) {
+        Optional<Member> newMember = Optional.of(memberRepository.save(member));
+        return newMember;
+    }
+
+    @Override
+    public Optional<Member> findByUserId(String userId) {
+        Optional<Member> member = memberRepository.findByUserId(userId);
+        return member;
+
+    }
+
+
     @Override
     public Optional<Member> findMember(Long id) {
 

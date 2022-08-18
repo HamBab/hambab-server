@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 
 import javax.persistence.*;
+//import javax.validation.constraints.NotEmpty;
 
 @Entity @Data
 @Getter
