@@ -21,7 +21,7 @@ public class GroupController {
 
 
     @GetMapping("/update/{id}/{name}")
-    public String updateGroup(@PathVariable String name, Long id) {
+    public String updateGroup(@PathVariable String name, @PathVariable Long id) {
         return groupService.updateGroup(name, id);
     }
 
