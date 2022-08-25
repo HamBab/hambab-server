@@ -11,12 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/group")
 public class GroupController {
 
     private final GroupService groupService;
+
+
+    @GetMapping("/update/{id}/{name}")
+    public String updateGroup(@PathVariable String name, Long id) {
+        return groupService.updateGroup(name, id);
+    }
 
     @GetMapping("")
     public Optional<List<Group>> getAllGroups() {
