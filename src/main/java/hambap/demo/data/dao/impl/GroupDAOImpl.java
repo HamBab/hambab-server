@@ -2,6 +2,7 @@ package hambap.demo.data.dao.impl;
 
 import hambap.demo.data.dao.GroupDAO;
 import hambap.demo.data.entity.Group;
+import hambap.demo.data.entity.Restaurant;
 import hambap.demo.data.repository.GroupRepository;
 import org.springframework.stereotype.Component;
 
@@ -26,5 +27,11 @@ public class GroupDAOImpl implements GroupDAO {
     @Override
     public Optional<List<Group>> findAll() {
         return Optional.of(groupRepository.findAll());
+    }
+
+    @Override
+    public Optional<Group> getGroupInfo(Long id) {
+        Optional<Group> info = groupRepository.findById(id);
+        return info;
     }
 }

@@ -38,4 +38,9 @@ public class GroupServiceImpl implements GroupService {
 
         return groupDAO.create(group);
     }
+
+    @Override
+    public Optional<Group> findGroupById(Long id) {
+        return groupDAO.getGroupInfo(id);
+    }
 }
