@@ -26,14 +26,6 @@ public class MemberDAOImpl implements MemberDAO {
     }
 
     @Override
-    public Optional<Member> findByUserId(String userId) {
-        Optional<Member> member = memberRepository.findByUserId(userId);
-        return member;
-
-    }
-
-
-    @Override
     public Optional<Member> findMember(Long id) {
 
         Optional<Member> member = memberRepository.findById(id);
