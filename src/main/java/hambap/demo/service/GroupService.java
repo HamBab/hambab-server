@@ -9,4 +9,5 @@ public interface GroupService {
 
     Optional<List<Group>> findAllGroups();
     Optional<Group> createGroup(Long restaurantId, Long leaderId);
+    Optional<Group> findGroupById(Long id);
 }

@@ -27,4 +27,9 @@ public class GroupController {
     public Optional<Group> createGroup(@PathVariable Long restaurantId, @PathVariable Long leaderId) {
         return groupService.createGroup(restaurantId, leaderId);
     }
+
+    @GetMapping("/{id}")
+    public Optional<Group> findGroupById(@PathVariable Long id) {
+        return groupService.findGroupById(id);
+    }
 }

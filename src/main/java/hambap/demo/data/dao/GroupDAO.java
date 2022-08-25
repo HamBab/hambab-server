@@ -9,4 +9,5 @@ public interface GroupDAO {
 
     Optional<Group> create(Group group);
     Optional<List<Group>> findAll();
+    Optional<Group> getGroupInfo(Long id);
 }
