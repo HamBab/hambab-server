@@ -1,10 +1,13 @@
 package hambap.demo.data.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.Getter;
 
+import javax.persistence.*;
+
+@Entity
+@Data
+@Getter
 public class Group {
 
     @Id
@@ -19,13 +22,13 @@ public class Group {
 
     private char sex;
 
-    private int age;
+    private String age;
 
     private int personnel;
 
     private String optional;
 
-    private int leader;
+    private Long leader;
 
-    private int restaurantId;
+    private Long restaurantId;
 }
