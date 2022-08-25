@@ -1,6 +1,7 @@
 package hambap.demo.controller;
 
 import hambap.demo.data.entity.Member;
+import hambap.demo.service.LoginService;
 import hambap.demo.service.MemberService;
 import hambap.demo.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.Optional;
 public class MemberController {
 
     private final MemberService memberService;
+    private final LoginService loginService;
 
     @GetMapping("/signup/{userId}")
     public String signUp(@PathVariable String userId) {
@@ -26,5 +28,10 @@ public class MemberController {
     @GetMapping("/{id}")
     public Optional<Member> findMemberById(@PathVariable Long id) {
         return memberService.findMember(id);
+    }
+
+    @GetMapping("login/{userId}/{password}")
+    public Long find(@PathVariable String userId, @PathVariable String password) {
+        return loginService.login(userId, password);
     }
 }

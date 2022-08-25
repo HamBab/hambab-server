@@ -5,13 +5,11 @@ import lombok.Getter;
 
 import javax.persistence.*;
 
-@Entity
-@Data
+@Entity @Data
 @Getter
 public class Group {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
