@@ -35,6 +35,13 @@ public class GroupServiceImpl implements GroupService {
         group.setPersonnel(2);
         group.setOptional("없음");
 
+        Optional<Group> gp = groupDAO.getGroupInfo(id);
+        Long leader = gp.get().getLeader();
+        Long restaurantId = gp.get().getRestaurantId();
+
+        group.setLeader(leader);
+        group.setRestaurantId(restaurantId);
+
         Optional<Group> newGroup = groupDAO.save(group);
         return "수정완료";
     }
