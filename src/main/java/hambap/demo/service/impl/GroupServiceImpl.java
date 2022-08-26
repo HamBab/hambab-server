@@ -7,8 +7,6 @@ import hambap.demo.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -44,6 +42,13 @@ public class GroupServiceImpl implements GroupService {
 
         Optional<Group> newGroup = groupDAO.save(group);
         return "수정완료";
+    }
+
+    @Override
+    public String deleteGroup(Long id) {
+        Optional<Group> gp = groupDAO.getGroupInfo(id);
+        groupDAO.delete(gp.orElseThrow());
+        return "삭제완료";
     }
 
     public Optional<List<Group>> findAllGroups() {

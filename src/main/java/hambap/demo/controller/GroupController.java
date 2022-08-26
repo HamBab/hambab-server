@@ -25,6 +25,11 @@ public class GroupController {
         return groupService.updateGroup(name, id);
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteGroup(@PathVariable Long id) {
+        return groupService.deleteGroup(id);
+    }
+
     @GetMapping("")
     public Optional<List<Group>> getAllGroups() {
         return groupService.findAllGroups();
