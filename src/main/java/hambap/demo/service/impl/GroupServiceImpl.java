@@ -1,8 +1,10 @@
 package hambap.demo.service.impl;
 
 import hambap.demo.data.dao.GroupDAO;
+import hambap.demo.data.dao.ParticipantDAO;
 import hambap.demo.data.entity.Group;
 import hambap.demo.service.GroupService;
+import hambap.demo.service.ParticipantService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,11 +16,15 @@ import java.util.Optional;
 public class GroupServiceImpl implements GroupService {
 
     private final GroupDAO groupDAO;
+    private final ParticipantDAO participantDAO;
+    private final ParticipantService participantService;
 
 
     @Autowired
-    public GroupServiceImpl(GroupDAO groupDAO) {
+    public GroupServiceImpl(GroupDAO groupDAO, ParticipantDAO participantDAO, ParticipantService participantService) {
         this.groupDAO = groupDAO;
+        this.participantDAO = participantDAO;
+        this.participantService = participantService;
     }
 
     @Override
@@ -68,6 +74,10 @@ public class GroupServiceImpl implements GroupService {
         group.setOptional("");
         group.setLeader(leaderId);
         group.setRestaurantId(restaurantId);
+
+        participantService.createParticipant(group.getId());
+        System.out.println("participantService = " + participantService);
+
 
         return groupDAO.create(group);
     }
